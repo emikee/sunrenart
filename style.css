@@ -402,11 +402,13 @@ a {
 /* reveal */
 .reveal{
   position: relative;
-  transform: translateY(150px);
+  filter: blur(1px);
   opacity: 0;
   transition: 2s all ease;
 }
 .reveal.show{
-  transform: translateY(0);
+  /* transform: translateY(150px); */
+  filter: blur(0);
   opacity: 1;
 }
+/* nav is a bit janky after adding reveal animatiom */
