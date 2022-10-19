@@ -6,8 +6,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 class="title">Sun Ren</h1>
+    <div class="intro" id="top">
+        <h1 class="title">Sun Ren</h1>
+        <p>Actor, playwrite, and ceramics pioneer in contemporary Chinese art.</p>
+    </div>
+    <!-- Sticky nav -->
+    <div class="navBar">
+        <div class="navLeft">
+            <div class="navLogo">
+                <a href="#top"><img src="Wireframe/SR_logo.png" width="75px"></a>
+            </div>
+            <div class="navItem">
+                <a href="#aboutsect">About</a>
+            </div>
+            <div class="navItem">
+                <a href="#ceramicssect">Ceramics</a>
+            </div>
+            <div class="navItem">
+                <a href="#inksect">Ink on Rice Paper</a>
+            </div>
+            <div class="navItem">
+                <a href="#oilsect">Oil Paintings</a>
+            </div>
+        </div>
+        <div class="navRight">
+            <div class="menu">Menu</div>
+        </div>
+        
+    </div>
+    <!-- Featured container -->
+    <div class="featured">
+        <img class="featuredImage" src="Ceramics/3.Teapot IV ,Stoneware with glaze , 9X6X9 _ Cup 1.5X2s.jpg"/>
+        <div class="glowAndText">
+            <div class="glowContainer">
+                <img src="Wireframe/rectGlow.png">
+                <div class="glowGrain">
+                    <img src="Wireframe/grainGlow.png"/>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <!-- About container -->
+    <section class="about reveal">
+        <div class="aboutInfo">
+            <img class="sectionTitle" id="aboutsect" src="Wireframe/About.png" width="250px"/>
+            <p class="aboutText">Sun Ren is an Associate Professor at the China Academy of Art and Vice President of China Contemporary Art Research Institute. He graduated from the Zhejiang Academy of Fine Arts in 1985, where he would later become a professor.</p> 
+            <p class="aboutText">An active participant of the Chinese avant-garde Art movement, ‘85 New Wave, Sun is well known for his pioneering approach to modern ceramic art, while also exploring modern inkbrush and conceptual painting.</p>
+            <div class="cta">
+                <a href="#ceramicssect"><h3>View works</h3></a>
+            </div>
+        </div>
+        <div class="aboutImage">
+            <img id="oil" src="Oil Paintings/014 (2).jpg"/>
+            <img id="oil2" src="Oil Paintings/038 (2)web.jpg"/>
+            <img id="ink" src="Ink on rice paper/12.jpg"/>
+            <img id="ceramic" src="Ceramics/8.Between and beyond 8X7X29-s.jpg"/>
+        </div>   
+    </section>
+
+    <section class="works">
+        <!-- ceramics -->
+        <div class="container ceramics reveal">
+            <div class="galleryTitle">
+                <h1 id="ceramicssect">Ceramics</h1>
+                <div class="seeMore">
+                    <!-- image content in css -->
+                </div>
+            </div>
+            <div class="highlightBox" id="ceramicbox"></div>
+                <!-- infinite scrolling https://www.youtube.com/watch?v=4UXJb4rjeDg for later -->
+                <div class="gallery" id="ceramicGallery">
+                    <img class="artwork pos1" src="Ceramics/3.Teapot IV ,Stoneware with glaze , 9X6X9 _ Cup 1.5X2s.jpg"/>
+                    <img class="artwork pos2" src="Ceramics/8and9.png"/>
+                    <img class="artwork pos3" src="Ceramics/1.png"/>
+                    <img class="artwork pos4" src="Ceramics/2.png"/>
+                    <img class="artwork pos5" src="Ceramics/11.Vehicle,Stoneware with Glaze, 6.5X7.5X19.5-s.jpg"/>
+                    <img class="artwork pos6" src="Ceramics/5and6.png"/>
+                </div>
+        </div>
+        <!-- ink on rice paper -->
+        <div class="container inkonrice reveal">
+            <div class="galleryTitle">
+                <h1 id="inksect">Ink on Rice Paper</h1>
+                <div class="seeMore">
+                    <!-- image content in css -->
+                </div>
+            </div>
+            <div class="highlightBox" id="inkbox"></div>
+                <!-- infinite scrolling https://www.youtube.com/watch?v=4UXJb4rjeDg for later -->
+                <div class="gallery" id="inkGallery">
+                    <img class="artwork pos1" src="Ink on rice paper/03.JPG"/>
+                    <img class="artwork pos2" src="Ink on rice paper/04.JPG"/>
+                    <img class="artwork pos3" src="Ink on rice paper/05.JPG"/>
+                    <img class="artwork pos4" src="Ink on rice paper/06.JPG"/>
+                    <img class="artwork pos5" src="Ink on rice paper/07.JPG"/>
+                    <img class="artwork pos6" src="Ink on rice paper/08.JPG"/>
+                    <img class="artwork pos1" src="Ink on rice paper/09.JPG"/>
+                    <img class="artwork pos2" src="Ink on rice paper/10.JPG"/>
+                </div>
+        </div>
+        <!-- oil painting -->
+        <div class="container oilpainting reveal">
+            <div class="galleryTitle">
+                <h1 id="oilsect">Oil Paintings</h1>
+                <div class="seeMore">
+                    <!-- image content in css -->
+                </div>
+            </div>
+            <div class="highlightBox" id="oilbox"></div>
+                <!-- infinite scrolling https://www.youtube.com/watch?v=4UXJb4rjeDg for later -->
+                <div class="gallery" id="oilGallery">
+                    <img class="artwork pos1" src="Oil Paintings/032-web.jpg"/>
+                    <img class="artwork pos2" src="Oil Paintings/011 (2).jpg"/>
+                    <img class="artwork pos3" src="Oil Paintings/014 (2).jpg"/>
+                    <img class="artwork pos4" src="Oil Paintings/03.jpg"/>
+                    <img class="artwork pos5" src="Oil Paintings/013.jpg"/>
+                    <img class="artwork pos6" src="Oil Paintings/035web.jpg"/>
+                    <img class="artwork pos1" src="Oil Paintings/himalayapaintingstudy1-web.jpg"/>
+                </div>
+        </div>
+    </section>
+    <!-- footer -->
+    <div class="footer">
+        <img class="sectionTitle" id="contactsect" src="Wireframe/Contact.png" width="250px"/>
+        <div class="links">
+            <a href="#">Resume</a>
+            <a href="#">Email</a>  
+        </div>
+
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
