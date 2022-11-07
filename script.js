@@ -89,7 +89,7 @@ window.onscroll = function (event) {
         // white
         body.style.backgroundColor = '#F1EFED';
     }
-    console.log(scroll);
+    // console.log(scroll);
 }
 //reveal
 function reveal() {
@@ -109,3 +109,29 @@ window.addEventListener("scroll", reveal);
 
 // To check the scroll position on page load
 reveal();
+
+const image = document.getElementsByClassName("artwork");
+const gallery = document.getElementsByClassName("gallery");
+//change cursors upon hover
+for (var i = 0 ; i < image.length; i++) {
+  image[i].addEventListener('mouseover', () => {
+    for (var j = 0; j < gallery.length; j++){
+      gallery[j].style.cursor = "url('Wireframe/view_cursor.svg') 48 48, pointer";
+    } 
+  });
+}
+for (var i = 0 ; i < image.length; i++) {
+  image[i].addEventListener('mouseleave', () => {
+    for (var j = 0; j < gallery.length; j++){
+      gallery[j].style.cursor = "url('Wireframe/drag_cursor.svg') 48 48, pointer";
+    } 
+  });
+}
+
+//i want it to console log the image's information. i should probably find some way to populate the gallery using js first
+for (var i = 0; i < image.length; i++) {
+  image[i].addEventListener('click', () => {
+    console.log(image[i].src.value);
+    // console.log(document.querySelector('img').src.split('/').reverse()[0]);
+  })
+}
