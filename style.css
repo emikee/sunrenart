@@ -1,6 +1,6 @@
 @font-face {
     font-family: Cervantis;
-    src: url(Cervanttis.ttf);
+    src: url(/Cervanttis.ttf);
 }
 @media (min-width:320px)  {
    /*phone*/
@@ -1070,7 +1070,6 @@
     white-space: nowrap;
     transition: all 0.2s;
     transform: scale(0.98);
-    /* cursor: url('Wireframe/drag_cursor.svg') 48 48, pointer; */
     cursor: grab;
   }
   .gallery.active {
