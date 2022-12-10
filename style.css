@@ -2,413 +2,1636 @@
     font-family: Cervantis;
     src: url(Cervanttis.ttf);
 }
-html {
-	scroll-behavior: smooth;
-}
-body {
-  color: #151516;
-  padding: 0;
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 200;
-  line-height: 130%;
-  transition: background-color 0.5s ease;
-}
-a {
-  text-decoration: none !important;
-}
-.intro {
-  position: absolute;
-  margin-left: 100px;
-  z-index: 1;
-  padding-top: 200px;
-}
-.intro p {
-  font-weight: 200;
-  margin-left: 70px;
-  width: 50%;
-}
-.title {
-  font-family: Cervantis;
-  font-size: 64px;
-  transform: rotate(-5deg);
-  font-weight: 200;
-  z-index: 1;
-  margin-bottom: 80px;
-}
-/* i wonder if there's anything i can do to make only the stroke blend mode set to difference. I don't like that the background doesn't appear to transition */
-.navBar {
-  mix-blend-mode: difference;
-  position: fixed;
-  z-index: 1;
-  left: -180px;
-  text-align: left;
-  top: 50%;
-  transform: translate(0, -50%);
-  margin: 0;
-  border: 1px solid #F1EFED;
-  background-color: rgb(0,0,0,0);
-  padding: 80px 20px 80px 20px;
-  border-radius: 0px 50% 50% 0;
-  transition: 0.5s;
-  height: 350px;
-}
-.navLeft {
-  float: left;
-}
-.navRight {
-  margin-left: 20px;
-  float: right;
-  height: 100%;
-}
-.menu {
-  margin-top: 160px;
-  opacity: 1;
-  transform: rotate(-90deg);
-  color: #F1EFED;
-}
-.navBar:hover {
-  mix-blend-mode: normal;
-  border: 0px;
-  background-color: rgb(0,0,0,0.8);
-  left: 0;
-  border-radius: 0px 20px 20px 0;
-}
+@media (min-width:320px)  {
+   /*phone*/
+  html {
+  scroll-behavior: smooth;   
+  scroll-snap-type: y proximity;
+  }
+  body {
+    color: #151516;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    line-height: 130%;
+    transition: background-color 0.5s ease;
+  }
+  a {
+    text-decoration: none !important;
+  }
+  .intro {
+    position: absolute;
+    text-align: center;
+    margin-top: 200px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 1.5em 3em;
+    width: 380px;
+    z-index: 1;
+    background-color: rgb(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+  }
+  .intro p {
+    font-weight: 200;
+    width: 100%;
+    color: #F1EFED;
+  }
+  .title {
+    font-family: Cervantis;
+    font-size: 64px;
+    transform: rotate(-5deg);
+    font-weight: 200;
+    z-index: 1;
+    margin-bottom: 80px;
+    color: #F1EFED;
+  }
 
-.navLogo {
-  margin-bottom: 40px;
-  cursor: pointer;
-  display: inline-block;
+  .navBar {
+    position: fixed;
+    z-index: 1;
+    text-align: center;
+    top: 0%;
+    /* transform: translate(0, -50%); */
+    margin: 0;
+    background-color: rgb(0,0,0,1);
+    padding: 30px 20px 30px 20px;
+    width: 100%;
+  }
+  .navLeft {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  .navRight {
+    display: none;
+    margin-left: 20px;
+    float: right;
+    height: 100%;
+  }
+  .menu {
+    display: none;
+    margin-top: 160px;
+    opacity: 1;
+    transform: rotate(-90deg);
+    color: #F1EFED;
+  }
+  
+  .navLogo {
+    margin-bottom: 0px;
+    cursor: pointer;
+  }
+  .navLogo img {
+    mix-blend-mode: difference;
+  }
+  .navItem {
+    margin-bottom: 0px;
+    cursor: pointer;
+    opacity: 50%;
+    transition: 0.5s;
+    letter-spacing:normal;
+    float: left;
+  }
+  .navItem a {
+    color: #F1EFED;
+  }
+  .navItem:hover {
+    opacity: 100%;
+    letter-spacing: 1px;
+  }
+  .navItem::before {
+    margin-top: 6px;
+    margin-right: 8px;
+    content: "";
+    display: inline-block;
+    background-color: #F49842;
+    width: 8px;
+    height: 8px;
+    border-radius: 0;
+    transition: 0.5s;
+    opacity: 0;
+    transform: rotate(45deg);
+    transform-origin: center center;
+  }
+  .navItem:hover::before {
+    opacity: 100;
+    transform: rotate(-45deg);
+    border-radius: 50%;
+  }
+  .featured {
+    margin: 0;
+    width: 100%;
+    position: relative;
+  }
+  .featuredImage {
+    width: 100%;
+    height: 570px;
+    object-fit: cover;
+    margin: 70px 0 70px 0;
+  }
+  .glowAndText {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+  }
+  .glowContainer {
+    position: absolute;
+    padding-right: 40%;
+    bottom: 0;
+    left: -100px;
+    mix-blend-mode: overlay;
+  }
+  .glowContainer img {
+    position: absolute;
+    left: 0;
+    bottom: 70px;
+    width: 700px;
+  }
+  .glowGrain {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    mix-blend-mode: overlay;
+  }
+  /* about section */
+  
+  .about {
+    margin: 0px 100px 50px 100px;
+    height: 700px;
+    text-align: center;
+    /* for some reason 100% doesnt work it doesnt wrap */
+  }
+  .sectionTitle {
+    margin: auto 0;
+    padding: 0;
+
+  }
+  .aboutText {
+    top: 20px;
+    width: 100%;
+    line-height: 150%;
+  }
+  .cta {
+    position: relative;
+    margin: 20px 0 0 0px;
+    cursor: pointer;
+    color: black;
+    opacity: 50%;
+    transform-origin: center left;
+    letter-spacing:normal;
+    display: inline-block;
+    transition: 0.5s;
+  }
+  .cta h3 {
+    font-weight: 200;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #F49842;
+    padding: 8px 12px;
+    color: black;
+  }
+  .cta:hover {
+    opacity: 100%;
+    letter-spacing: 1px;
+  }
+  .cta::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    /* display: inline-block; */
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    left: 0;
+    top: 0;
+    background-color: #F49842;
+    transform-origin: bottom right;
+    transition: transform 0.5s;
+  }
+  
+  .cta:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  /* paintings on about */
+  .aboutImage {
+    float: none;
+    position:relative;
+    display: none;
+    visibility: hidden;
+  }
+  .aboutImage-s {
+    justify-content: center;
+    display: flex;
+    visibility: visible;
+    width: 100%;
+    height: 18vh;
+    overflow: hidden;
+  }
+  .aboutImage-s img {
+    opacity: 80%;
+  }
+  .works {
+    padding-top: 0px;
+    position: relative;
+    margin: 100px 0 100px 0;
+  }
+  .container {
+    margin: 50px 0 180px 0px;
+  }
+  .galleryTitle {
+    margin-left: 100px;
+    color: #F1EFED;
+    mix-blend-mode: difference;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+  .galleryTitle h1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    font-size: 4rem;
+    text-transform: uppercase;
+  }
+  .highlightBox {
+    position: absolute;
+    z-index:0;
+    width: 500px;
+    height: 500px;
+    background-color: #F1EFED;
+  }
+  #ceramicbox {
+    left: 0;
+  }
+  .seeMore img{
+    width: 80px;
+    transition: 0.5s;
+  }
+  .seeMore img:hover {
+    cursor: pointer;
+    transform: scale(0.9);
+    filter: invert(70%) sepia(20%) saturate(6000%) hue-rotate(-10deg) brightness(180%) contrast(90%);
+  }
+  .gallery {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 500px;
+    width: 100%;
+    align-items: center;
+    position: relative;
+    white-space: nowrap;
+    transition: all 0.2s;
+    transform: scale(0.98);
+  
+  }
+  .gallery.active {
+    transform: scale(1);
+  }
+  .gallery::-webkit-scrollbar {
+    display: none;
+  }
+  .artwork {
+    height: 340px;
+    width: 340px;
+    margin: 0 25px;
+    position: relative;
+    filter: drop-shadow(0 0 30px rgb(244,152,66,0.1));
+    transition: all 0.5s;
+    object-fit: cover;
+    transform-origin: center center;
+  }
+  .artwork:hover {
+    transform: scale(0.95);
+  }
+  .pos1 {
+    top: -60px;
+  }
+  .pos2 {
+    top: 20px;
+  }
+  .pos3 {
+    top: 100px;
+  }
+  .pos4 {
+    top: 20px;
+  }
+  
+  #inksect {
+    padding-top: 60px;
+    text-align: right;
+    margin-right: 100px;
+    line-height: 100%;
+  }
+  #aboutsect {
+    padding-top: 0px;
+  }
+  
+  #inkbox {
+    right: 0;
+  }
+  #inkGallery {
+    flex-direction: row-reverse;
+  }
+  /* footer */
+  .footer{
+    margin: 800px 0 80px 0;
+    padding: 20px 100px;
+  }
+  .links{
+    margin-top: 100px;
+  }
+  .links a{
+    color: #151516;
+    text-decoration: underline !important;
+    font: 'Roboto', sans-serif;
+    font-weight: 200;
+    margin-right: 48px;
+    transition: all 0.5s;
+  }
+  .links a:hover {
+    color: #F49842;
+    letter-spacing: 1px;
+    transform-origin: center left;
+  }
+  /* reveal */
+  .reveal{
+    position: relative;
+    opacity: 0;
+    top: 100px;
+    transition: 2s all ease;
+  }
+  .reveal.show{
+    opacity: 1;
+    top: 0;
+  }
 }
-.navLogo img {
-  mix-blend-mode: difference;
+@media (min-width:600px)  {
+  /*tablet*/
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    color: #151516;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    line-height: 130%;
+    transition: background-color 0.5s ease;
+  }
+  a {
+    text-decoration: none !important;
+  }
+  .intro {
+    position: absolute;
+    text-align: center;
+    margin-top: 200px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 1.5em 3em;
+    width: 380px;
+    z-index: 1;
+    background-color: rgb(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+  }
+  .intro p {
+    font-weight: 200;
+    width: 100%;
+    color: #F1EFED;
+  }
+  .title {
+    font-family: Cervantis;
+    font-size: 64px;
+    transform: rotate(-5deg);
+    font-weight: 200;
+    z-index: 1;
+    margin-bottom: 80px;
+    color: #F1EFED;
+  }
+  /* i wonder if there's anything i can do to make only the stroke blend mode set to difference. I don't like that the background doesn't appear to transition */
+  .navBar {
+    position: fixed;
+    z-index: 1;
+    text-align: center;
+    top: 0%;
+    /* transform: translate(0, -50%); */
+    margin: 0;
+    background-color: rgb(0,0,0,1);
+    padding: 30px 20px 30px 20px;
+    width: 100%;
+  }
+  .navLeft {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  .navRight {
+    display: none;
+    margin-left: 20px;
+    float: right;
+    height: 100%;
+  }
+  .menu {
+    display: none;
+    margin-top: 160px;
+    opacity: 1;
+    transform: rotate(-90deg);
+    color: #F1EFED;
+  }
+  
+  .navLogo {
+    margin-bottom: 0px;
+    cursor: pointer;
+  }
+  .navLogo img {
+    mix-blend-mode: difference;
+  }
+  .navItem {
+    margin-bottom: 0px;
+    cursor: pointer;
+    opacity: 50%;
+    transition: 0.5s;
+    letter-spacing:normal;
+    float: left;
+  }
+  .navItem a {
+    color: #F1EFED;
+  }
+  .navItem:hover {
+    opacity: 100%;
+    letter-spacing: 1px;
+  }
+  .navItem::before {
+    margin-top: 6px;
+    margin-right: 8px;
+    content: "";
+    display: inline-block;
+    background-color: #F49842;
+    width: 8px;
+    height: 8px;
+    border-radius: 0;
+    transition: 0.5s;
+    opacity: 0;
+    transform: rotate(45deg);
+    transform-origin: center center;
+  }
+  .navItem:hover::before {
+    opacity: 100;
+    transform: rotate(-45deg);
+    border-radius: 50%;
+  }
+  .featured {
+    margin: 0;
+    width: 100%;
+    position: relative;
+  }
+  .featuredImage {
+    width: 100%;
+    height: 570px;
+    object-fit: cover;
+    margin: 70px 0 70px 0;
+  }
+  .glowAndText {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+  }
+  .glowContainer {
+    position: absolute;
+    padding-right: 40%;
+    bottom: 0;
+    left: -100px;
+    mix-blend-mode: overlay;
+  }
+  .glowContainer img {
+    position: absolute;
+    left: 0;
+    bottom: 70px;
+    width: 700px;
+  }
+  .glowGrain {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    mix-blend-mode: overlay;
+  }
+  /* about section */
+  
+  .about {
+    margin: 0px 100px 50px 100px;
+    height: 700px;
+    text-align: center;
+    /* for some reason 100% doesnt work it doesnt wrap */
+  }
+  .sectionTitle {
+    margin: auto 0;
+    padding: 0;
+
+  }
+  .aboutText {
+    top: 20px;
+    width: 100%;
+    line-height: 150%;
+  }
+  .cta {
+    position: relative;
+    margin: 20px 0 0 0px;
+    cursor: pointer;
+    color: black;
+    opacity: 50%;
+    transform-origin: center left;
+    letter-spacing:normal;
+    display: inline-block;
+    transition: 0.5s;
+  }
+  .cta h3 {
+    font-weight: 200;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #F49842;
+    padding: 8px 12px;
+    color: black;
+  }
+  .cta:hover {
+    opacity: 100%;
+    letter-spacing: 1px;
+  }
+  .cta::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    /* display: inline-block; */
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    left: 0;
+    top: 0;
+    background-color: #F49842;
+    transform-origin: bottom right;
+    transition: transform 0.5s;
+  }
+  
+  .cta:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  /* paintings on about */
+  .aboutImage {
+    float: none;
+    position:relative;
+    display: none;
+    visibility: hidden;
+  }
+  .aboutImage-s {
+    justify-content: center;
+    display: flex;
+    visibility: visible;
+    width: 100%;
+    height: 18vh;
+    overflow: hidden;
+  }
+  .aboutImage-s img {
+    opacity: 80%;
+  }
+  .works {
+    padding-top: 0px;
+    position: relative;
+    margin: 100px 0 100px 0;
+  }
+  .container {
+    margin: 50px 0 180px 0px;
+  }
+  .galleryTitle {
+    margin-left: 100px;
+    color: #F1EFED;
+    mix-blend-mode: difference;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+  .galleryTitle h1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    font-size: 4rem;
+    text-transform: uppercase;
+  }
+  .highlightBox {
+    position: absolute;
+    z-index:0;
+    width: 500px;
+    height: 500px;
+    background-color: #F1EFED;
+  }
+  #ceramicbox {
+    left: 0;
+  }
+  .gallery {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 500px;
+    width: 100%;
+    align-items: center;
+    position: relative;
+    white-space: nowrap;
+    transition: all 0.2s;
+    transform: scale(0.98);
+  
+  }
+  .gallery.active {
+    transform: scale(1);
+  }
+  .gallery::-webkit-scrollbar {
+    display: none;
+  }
+  .artwork {
+    height: 340px;
+    width: 340px;
+    margin: 0 25px;
+    position: relative;
+    filter: drop-shadow(0 0 30px rgb(244,152,66,0.1));
+    transition: all 0.5s;
+    object-fit: cover;
+    transform-origin: center center;
+  }
+  .artwork:hover {
+    transform: scale(0.95);
+  }
+  .pos1 {
+    top: -60px;
+  }
+  .pos2 {
+    top: 20px;
+  }
+  .pos3 {
+    top: 100px;
+  }
+  .pos4 {
+    top: 20px;
+  }
+  
+  /* anchor point adjustments */
+  #ceramicssect {
+    padding-top: 60px;
+  }
+  #inksect {
+    padding-top: 60px;
+    text-align: right;
+    margin-right: 100px;
+    line-height: 100%;
+  }
+  #aboutsect {
+    padding-top: 0px;
+  }
+  
+  #inkbox {
+    right: 0;
+  }
+  #inkGallery {
+    flex-direction: row-reverse;
+  }
+  /* footer */
+  .footer{
+    margin: 300px 0 80px 0;
+    padding: 20px 100px;
+  }
+  .links{
+    margin-top: 100px;
+  }
+  .links a{
+    color: #151516;
+    text-decoration: underline !important;
+    font: 'Roboto', sans-serif;
+    font-weight: 200;
+    margin-right: 48px;
+    transition: all 0.5s;
+  }
+  .links a:hover {
+    color: #F49842;
+    letter-spacing: 1px;
+    transform-origin: center left;
+  }
+  /* reveal */
 }
-.navLogo::before {
-  mix-blend-mode: normal;
-  content: "";
-  position: absolute;
-  left: 48px;
-  top: 96px;
-  z-index: -1;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border-radius: 0;
-  background-color: #F1EFED;
-  transition: 0.5s;
-  transform-origin: center center;
-  transform: scale(1) rotate(0deg);
-  opacity: 0;
+@media (min-width:1025px)  {
+  /*large tablet, computer*/
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    color: #151516;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    line-height: 130%;
+    transition: background-color 0.5s ease;
+  }
+  a {
+    text-decoration: none !important;
+  }
+  .intro {
+    position: absolute;
+    text-align: left;
+    margin-top: 18em;
+    left: 0%;
+    transform: translate(0);
+    padding: 0;
+    background-color: rgb(0,0,0,0);
+    backdrop-filter: none;
+    margin-left: 120px;
+    z-index: 1;
+  }
+  .intro p {
+    font-weight: 200;
+    margin-left: 50px;
+    width: 50%;
+    color: #151516;
+  }
+  .title {
+    font-family: Cervantis;
+    font-size: 48px;
+    transform: rotate(-5deg);
+    font-weight: 200;
+    z-index: 1;
+    margin-bottom: 80px;
+    color: #151516;
+  }
+  /* i wonder if there's anything i can do to make only the stroke blend mode set to difference. I don't like that the background doesn't appear to transition */
+  .navBar {
+    mix-blend-mode: difference;
+    position: fixed;
+    z-index: 1;
+    left: -180px;
+    text-align: left;
+    top: 50%;
+    transform: translate(0, -50%);
+    margin: 0;
+    border: 1px solid #F1EFED;
+    background-color: rgb(0,0,0,0);
+    padding: 80px 20px 80px 20px;
+    border-radius: 0px 50% 50% 0;
+    transition: 0.5s;
+    height: 350px;
+    width: auto;
+  }
+  .navLeft {
+    float: left;
+    display: inline;
+    /* align-items: center; */
+    justify-content: center;
+  }
+
+  .navRight {
+    margin-left: 20px;
+    float: right;
+    height: 100%;
+    display: inline;
+  }
+  .menu {
+    display: block;
+    margin-top: 160px;
+    opacity: 1;
+    transform: rotate(-90deg);
+    color: #F1EFED;
+  }
+  .navBar:hover {
+    mix-blend-mode: normal;
+    border: 0px;
+    background-color: rgb(0,0,0,0.8);
+    left: 0;
+    border-radius: 0px 20px 20px 0;
+  }
+  
+  .navLogo {
+    margin-bottom: 40px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .navLogo img {
+    mix-blend-mode: difference;
+  }
+  .navLogo::before {
+    mix-blend-mode: normal;
+    content: "";
+    position: absolute;
+    left: 48px;
+    top: 96px;
+    z-index: -1;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+    background-color: #F1EFED;
+    transition: 0.5s;
+    transform-origin: center center;
+    transform: scale(1) rotate(0deg);
+    opacity: 0;
+  }
+  .navLogo:hover::before {
+    transform: scale(3) rotate(-45deg);
+    opacity: 0.9;
+    border-radius: 50%;
+  }
+  .navItem {
+    margin-bottom: 40px;
+    cursor: pointer;
+    opacity: 50%;
+    transition: 0.5s;
+    transform-origin: center right;
+    letter-spacing:normal;
+    float: none;
+  }
+  .navItem a {
+    color: #F1EFED;
+  }
+  .navItem:hover {
+    opacity: 100%;
+    letter-spacing: 1px;
+  }
+  .navItem::before {
+    /* position: absolute; */
+    margin-top: 6px;
+    margin-right: 8px;
+    content: "";
+    display: inline-block;
+    background-color: #F49842;
+    width: 8px;
+    height: 8px;
+    border-radius: 0;
+    transition: 0.5s;
+    opacity: 0;
+    transform: rotate(45deg);
+    transform-origin: center center;
+  }
+  .navItem:hover::before {
+    opacity: 100;
+    transform: rotate(-45deg);
+    border-radius: 50%;
+  }
+  .featured {
+    margin: 35px 0 70px 35%;
+    width: 65%;
+    position: relative;
+  }
+  .featuredImage {
+    width: 100%;
+    height: 570px;
+    object-fit: cover;
+    margin: 70px 0 70px 0;
+  }
+  .glowAndText {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .glowContainer {
+    position: absolute;
+    padding-right: 40%;
+    bottom: -100px;
+    left: -100px;
+    mix-blend-mode: overlay;
+  }
+  .glowContainer img {
+    position: absolute;
+    left: 0;
+    bottom: 70px;
+    width: 700px;
+  }
+  .glowGrain {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    mix-blend-mode: overlay;
+  }
+  /* about section */
+  .about {
+    margin: 50px 100px 50px 100px;
+    height: 700px;
+    text-align: left;
+    /* for some reason 100% doesnt work it doesnt wrap */
+  }
+  .aboutInfo {
+    float:left;
+    width: 40%;
+  }
+  .sectionTitle {
+    margin: 0;
+    padding: 0;
+    margin-bottom: -60px;
+    margin-left: -20px;
+  }
+  .aboutText {
+    margin-left: 50px;
+    top: 20px;
+    width: 100%;
+    line-height: 150%;
+  }
+  .cta {
+    position: relative;
+    margin: 20px 0 0 50px;
+    cursor: pointer;
+    color: black;
+    opacity: 50%;
+    transform-origin: center left;
+    letter-spacing:normal;
+    display: inline-block;
+    transition: 0.5s;
+  }
+  .cta h3 {
+    font-weight: 200;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #F49842;
+    padding: 8px 12px;
+    color: black;
+  }
+  .cta:hover {
+    opacity: 100%;
+    letter-spacing: 1px;
+  }
+  .cta::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    /* display: inline-block; */
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    left: 0;
+    top: 0;
+    background-color: #F49842;
+    transform-origin: bottom right;
+    transition: transform 0.5s;
+  }
+  
+  .cta:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  /* paintings on about */
+  /* i would like the images to start scaling down after a certain window width */
+  .aboutImage {
+    margin-top: 100px;
+    float: right;
+    width: 50%;
+    height: 550px;
+    position:relative;
+    display: inline;
+    visibility: visible;
+  }
+  .aboutImage img {
+    position: absolute;
+  }
+  .aboutImage-s {
+    justify-content: center;
+    display: none;
+    visibility: hidden;
+    height: 18vh;
+  }
+  .aboutImage #oil {
+    width: 200px;
+    right: 50px;
+    filter: blur(1.4px);
+  }
+  .aboutImage #oil2 {
+    width: 250px;
+    bottom: 0px;
+    left: -80px;
+    filter: blur(1.5px);
+    z-index: -2;
+    opacity: 0.7;
+  }
+  .aboutImage #ink {
+    width: 300px;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    /* filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4)); */
+  
+  }
+  .aboutImage #ceramic {
+    width: 270px;
+    height: 400px;
+    right: 0;
+    top: 300px;
+    object-fit: cover;
+    object-position: 50% 0%;
+    filter: blur(1.5px);
+  }
+  .works {
+    padding-top: 50px;
+    position: relative;
+    margin: 100px 0 100px 0;
+  }
+  .container {
+    margin: 50px 0 180px 0px;
+  }
+  .galleryTitle {
+    margin-left: 100px;
+    color: #F1EFED;
+    mix-blend-mode: difference;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+  .galleryTitle h1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    font-size: 4rem;
+    text-transform: uppercase;
+  }
+  .highlightBox {
+    position: absolute;
+    z-index:0;
+    width: 500px;
+    height: 500px;
+    background-color: #F1EFED;
+  }
+  #ceramicbox {
+    left: 0;
+  }
+  .seeMore img{
+    width: 100px;
+  }
+  .gallery {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 500px;
+    width: 100%;
+    align-items: center;
+    position: relative;
+    white-space: nowrap;
+    transition: all 0.2s;
+    transform: scale(0.98);
+    /* cursor: url('Wireframe/drag_cursor.svg') 48 48, pointer; */
+    cursor: grab;
+  }
+  .gallery.active {
+    transform: scale(1);
+  }
+  .gallery::-webkit-scrollbar {
+    display: none;
+  }
+  .artwork {
+    height: 340px;
+    width: 340px;
+    margin: 0 25px;
+    position: relative;
+    filter: drop-shadow(0 0 30px rgb(244,152,66,0.1));
+    transition: all 0.5s;
+    object-fit: cover;
+    transform-origin: center center;
+  }
+  .artwork:hover {
+    transform: scale(0.95);
+  }
+  .pos1 {
+    top: -60px;
+  }
+  .pos2 {
+    top: 20px;
+  }
+  .pos3 {
+    top: 100px;
+  }
+  .pos4 {
+    top: 20px;
+  }
+  
+  /* anchor point adjustments */
+  #ceramicssect {
+    padding-top: 0px;
+  }
+  #inksect {
+    padding-top: 60px;
+    text-align: right;
+    margin-right: 100px;
+  }
+  #aboutsect {
+    padding-top: 60px;
+  }
+  
+  #inkbox {
+    right: 0;
+  }
+  #inkGallery {
+    flex-direction: row-reverse;
+  }
+  /* footer */
+  .footer{
+    margin: 500px 0 80px 0;
+    padding: 20px 100px;
+  }
+  .links{
+    margin-top: 100px;
+  }
+  .links a{
+    color: #151516;
+    text-decoration: underline !important;
+    font: 'Roboto', sans-serif;
+    font-weight: 200;
+    margin-right: 48px;
+    transition: all 0.5s;
+  }
+  .links a:hover {
+    color: #F49842;
+    letter-spacing: 1px;
+    transform-origin: center left;
+  }
+  /* reveal */
+  /* nav is a bit janky after adding reveal animatiom */
 }
-.navLogo:hover::before {
-  transform: scale(3) rotate(-45deg);
-  opacity: 0.9;
+@media (min-width:1281px)  {
+   /* high res desktop*/
+   html {
+    scroll-behavior: smooth;
+  }
+  body {
+    color: #151516;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    line-height: 130%;
+    transition: background-color 0.5s ease;
+  }
+  a {
+    text-decoration: none !important;
+  }
+  .intro {
+    position: absolute;
+    text-align: left;
+    margin-top: 16em;
+    left: 0%;
+    width: 30%;
+    transform: translate(0);
+    padding: 0;
+    background-color: rgb(0,0,0,0);
+    backdrop-filter: none;
+    margin-left: 130px;
+    z-index: 1;
+  }
+  .intro p {
+    font-weight: 200;
+    margin-left: 70px;
+    width: 50%;
+  }
+  .title {
+    font-family: Cervantis;
+    font-size: 64px;
+    transform: rotate(-5deg);
+    font-weight: 200;
+    z-index: 1;
+    margin-bottom: 80px;
+  }
+  /* i wonder if there's anything i can do to make only the stroke blend mode set to difference. I don't like that the background doesn't appear to transition */
+  .navBar {
+    mix-blend-mode: difference;
+    position: fixed;
+    z-index: 1;
+    left: -180px;
+    text-align: left;
+    top: 50%;
+    transform: translate(0, -50%);
+    margin: 0;
+    border: 1px solid #F1EFED;
+    background-color: rgb(0,0,0,0);
+    padding: 80px 20px 80px 20px;
+    border-radius: 0px 50% 50% 0;
+    transition: 0.5s;
+    height: 350px;
+  }
+  .navLeft {
+    float: left;
+  }
+  .navRight {
+    margin-left: 20px;
+    float: right;
+    height: 100%;
+  }
+  .menu {
+    margin-top: 160px;
+    opacity: 1;
+    transform: rotate(-90deg);
+    color: #F1EFED;
+  }
+  .navBar:hover {
+    mix-blend-mode: normal;
+    border: 0px;
+    background-color: rgb(0,0,0,0.8);
+    left: 0;
+    border-radius: 0px 20px 20px 0;
+  }
+  
+  .navLogo {
+    margin-bottom: 40px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .navLogo img {
+    mix-blend-mode: difference;
+  }
+  .navLogo::before {
+    mix-blend-mode: normal;
+    content: "";
+    position: absolute;
+    left: 48px;
+    top: 96px;
+    z-index: -1;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+    background-color: #F1EFED;
+    transition: 0.5s;
+    transform-origin: center center;
+    transform: scale(1) rotate(0deg);
+    opacity: 0;
+  }
+  .navLogo:hover::before {
+    transform: scale(3) rotate(-45deg);
+    opacity: 0.9;
+    border-radius: 50%;
+  }
+  .navItem {
+    margin-bottom: 40px;
+    cursor: pointer;
+    opacity: 50%;
+    transition: 0.5s;
+    transform-origin: center right;
+    letter-spacing:normal;
+  }
+  .navItem a {
+    color: #F1EFED;
+  }
+  .navItem:hover {
+    opacity: 100%;
+    letter-spacing: 1px;
+  }
+  .navItem::before {
+    /* position: absolute; */
+    margin-top: 6px;
+    margin-right: 8px;
+    content: "";
+    display: inline-block;
+    background-color: #F49842;
+    width: 8px;
+    height: 8px;
+    border-radius: 0;
+    transition: 0.5s;
+    opacity: 0;
+    transform: rotate(45deg);
+    transform-origin: center center;
+  }
+  .navItem:hover::before {
+    opacity: 100;
+    transform: rotate(-45deg);
+    border-radius: 50%;
+  }
+  .featured {
+    margin: 20px 0 70px 35%;
+    width: 65%;
+    position: relative;
+  }
+  .featuredImage {
+    margin: 0;
+    padding: 0;
+    height: 620px;
+  }
+  .glowAndText {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .glowContainer {
+    position: absolute;
+    padding-right: 40%;
+    bottom: -100px;
+    left: 0px;
+    mix-blend-mode: overlay;
+  }
+  .glowContainer img {
+    position: absolute;
+    width: 700px;
+  }
+  .glowGrain {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    mix-blend-mode: overlay;
+  }
+  /* about section */
+  .about {
+    margin: 50px 100px 50px 100px;
+    height: 700px;
+    /* for some reason 100% doesnt work it doesnt wrap */
+  }
+  .aboutInfo {
+    float:left;
+    width: 40%;
+  }
+  .sectionTitle {
+    margin: 0;
+    padding: 0;
+    margin-bottom: -60px;
+    margin-left: -20px;
+  }
+  .aboutText {
+    margin-left: 70px;
+    top: 20px;
+    width: 100%;
+    line-height: 150%;
+  }
+  .cta {
+    position: relative;
+    margin: 20px 0 0 70px;
+    cursor: pointer;
+    color: black;
+    opacity: 50%;
+    transform-origin: center left;
+    letter-spacing:normal;
+    display: inline-block;
+    transition: 0.5s;
+  }
+  .cta h3 {
+    font-weight: 200;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #F49842;
+    padding: 8px 12px;
+    color: black;
+  }
+  .cta:hover {
+    opacity: 100%;
+    letter-spacing: 1px;
+  }
+  .cta::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    /* display: inline-block; */
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    left: 0;
+    top: 0;
+    background-color: #F49842;
+    transform-origin: bottom right;
+    transition: transform 0.5s;
+  }
+  
+  .cta:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  /* paintings on about */
+  /* i would like the images to start scaling down after a certain window width */
+  .aboutImage {
+    float: right;
+    width: 60%;
+    height: 600px;
+    position:relative;
+  }
+  .aboutImage img {
+    position: absolute;
+  }
+  .aboutImage #oil {
+    width: 280px;
+    right: 50px;
+    filter: blur(1.4px);
+  }
+  .aboutImage #oil2 {
+    width: 300px;
+    bottom: -50px;
+    left: -100px;
+    filter: blur(1.5px);
+    z-index: -2;
+    opacity: 0.7;
+  }
+  .aboutImage #ink {
+    width: 320px;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    /* filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4)); */
+  
+  }
+  .aboutImage #ceramic {
+    width: 300px;
+    height: 450px;
+    right: 0;
+    top: 300px;
+    object-fit: cover;
+    object-position: 50% 0%;
+    filter: blur(1.5px);
+  }
+  .works {
+    padding-top: 10px;
+    position: relative;
+    margin: 100px 0 100px 0;
+  }
+  .container {
+    margin: 50px 0 180px 0px;
+  }
+  .galleryTitle {
+    margin-left: 100px;
+    color: #F1EFED;
+    mix-blend-mode: difference;
+  }
+  .galleryTitle h1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    font-size: 4rem;
+    text-transform: uppercase;
+  }
+  .highlightBox {
+    position: absolute;
+    z-index:0;
+    width: 500px;
+    height: 500px;
+    background-color: #F1EFED;
+  }
+  #ceramicbox {
+    left: 0;
+  }
+  .gallery {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 500px;
+    width: 100%;
+    align-items: center;
+    position: relative;
+    white-space: nowrap;
+    transition: all 0.2s;
+    transform: scale(0.98);
+    cursor: grab;
+  }
+  .gallery.active {
+    transform: scale(1);
+  }
+  .gallery::-webkit-scrollbar {
+    display: none;
+  }
+  .galleryTitle {
+    display: flex;
+    align-items: center;
+    gap: 4em;
+    margin-bottom: 20px;
+  }
+  .seeMore svg{
+    transition: 0.5s;
+  }
+  .seeMore svg {
+    width: 160px;
+  }
+  .seeMore svg:hover {
+    cursor: pointer;
+    transform: scale(0.9);
+    filter: invert(70%) sepia(20%) saturate(6000%) hue-rotate(-10deg) brightness(180%) contrast(90%);
+  }
+  .artwork {
+    height: 300px;
+    width: 300px;
+    margin: 0 25px;
+    position: relative;
+    filter: drop-shadow(0 0 30px rgb(244,152,66,0.1));
+    transition: all 0.5s;
+    object-fit: cover;
+    transform-origin: center center;
+  }
+  .artwork:hover {
+    transform: scale(0.95);
+  }
+  .pos1 {
+    top: -60px;
+  }
+  .pos2 {
+    top: 20px;
+  }
+  .pos3 {
+    top: 100px;
+  }
+  .pos4 {
+    top: 20px;
+  }
+  
+  /* anchor point adjustments */
+  #ceramicssect {
+    margin-top: 20em;
+  }
+  #inksect {
+    text-align: right;
+    margin-right: 100px;
+    justify-content: right;
+  }
+  
+  #inkbox {
+    right: 0;
+  }
+  #inkGallery {
+    flex-direction: row-reverse;
+  }
+  /* footer */
+  .footer{
+    margin: 400px 0 80px 0;
+    padding: 20px 100px;
+  }
+  .links{
+    margin-top: 100px;
+  }
+  .links a{
+    color: #151516;
+    text-decoration: underline !important;
+    font: 'Roboto', sans-serif;
+    font-weight: 200;
+    margin-right: 48px;
+    transition: all 0.5s;
+  }
+  .links a:hover {
+    color: #F49842;
+    letter-spacing: 1px;
+    transform-origin: center left;
+  }
+}
+.cursor {
+  z-index: 1;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-}
-.navItem {
-  margin-bottom: 40px;
-  cursor: pointer;
-  opacity: 50%;
-  transition: 0.5s;
-  transform-origin: center right;
-  letter-spacing:normal;
-}
-.navItem a {
-  color: #F1EFED;
-}
-.navItem:hover {
-  opacity: 100%;
-  letter-spacing: 1px;
-}
-.navItem::before {
-  /* position: absolute; */
-  margin-top: 6px;
-  margin-right: 8px;
-  content: "";
-  display: inline-block;
-  background-color: #F49842;
-  width: 8px;
-  height: 8px;
-  border-radius: 0;
-  transition: 0.5s;
-  opacity: 0;
-  transform: rotate(45deg);
-  transform-origin: center center;
-}
-.navItem:hover::before {
-  opacity: 100;
-  transform: rotate(-45deg);
-  border-radius: 50%;
-}
-.featured {
-  margin: 0px 0 70px 35%;
-  width: 65%;
-  position: relative;
-}
-.featuredImage {
-  width: 100%;
-  height: 570px;
-  object-fit: cover;
-  margin: 70px 0 70px 0;
-}
-.glowAndText {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(0);
+  transition: 0.5s cubic-bezier(.06,.34,.49,1);
 }
-.glowContainer {
-  position: absolute;
-  padding-right: 40%;
-  bottom: -100px;
-  left: -100px;
-  mix-blend-mode: overlay;
-}
-.glowContainer img {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 700px;
-}
-.glowGrain {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  mix-blend-mode: overlay;
-}
-/* about section */
-.about {
-  margin: 50px 100px 50px 100px;
-  height: 700px;
-  /* for some reason 100% doesnt work it doesnt wrap */
-}
-.aboutInfo {
-  float:left;
-  width: 40%;
-}
-.sectionTitle {
-  margin: 0;
-  padding: 0;
-  margin-bottom: -60px;
-  margin-left: -20px;
-}
-.aboutText {
-  margin-left: 70px;
-  top: 20px;
-  width: 100%;
-  line-height: 150%;
-}
-.cta {
-  position: relative;
-  margin: 20px 0 0 70px;
-  cursor: pointer;
-  color: black;
-  opacity: 50%;
-  transform-origin: center left;
-  letter-spacing:normal;
-  display: inline-block;
-  transition: 0.5s;
-}
-.cta h3 {
-  font-weight: 200;
-  margin: 0;
-  padding: 0;
-  border: 1px solid #F49842;
-  padding: 8px 12px;
-  color: black;
-}
-.cta:hover {
-  opacity: 100%;
-  letter-spacing: 1px;
-}
-.cta::after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  /* display: inline-block; */
-  width: 100%;
-  height: 100%;
-  transform: scaleX(0);
-  left: 0;
-  top: 0;
-  background-color: #F49842;
-  transform-origin: bottom right;
-  transition: transform 0.5s;
-}
-
-.cta:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-/* paintings on about */
-/* i would like the images to start scaling down after a certain window width */
-.aboutImage {
-  float: right;
-  width: 60%;
-  height: 600px;
-  position:relative;
-}
-.aboutImage img {
-  position: absolute;
-}
-.aboutImage #oil {
-  width: 180px;
-  right: 50px;
-  filter: blur(1.4px);
-}
-.aboutImage #oil2 {
-  width: 300px;
-  bottom: 0px;
-  left: -80px;
-  filter: blur(1.5px);
-  z-index: -2;
-  opacity: 0.7;
-}
-.aboutImage #ink {
-  width: 320px;
-  top: 50%;
-  left: 40%;
-  transform: translate(-50%, -50%);
-  /* filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4)); */
-
-}
-.aboutImage #ceramic {
-  width: 300px;
-  height: 450px;
-  right: 0;
-  top: 300px;
-  object-fit: cover;
-  object-position: 50% 0%;
-  filter: blur(1.5px);
-}
-.works {
-  padding-top: 50px;
-  position: relative;
-  margin: 100px 0 100px 0;
-}
-.container {
-  margin: 50px 0 180px 0px;
-}
-.galleryTitle {
-  margin-left: 100px;
-  color: #F1EFED;
-  mix-blend-mode: difference;
-}
-.galleryTitle h1{
-  font-family: 'Roboto', sans-serif;
-  font-weight: 200;
-  font-size: 4rem;
-  text-transform: uppercase;
-}
-.highlightBox {
-  position: absolute;
-  z-index:0;
-  width: 500px;
-  height: 500px;
-  background-color: #F1EFED;
-}
-#ceramicbox {
-  left: 0;
-}
-.gallery {
-  display: flex;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  height: 500px;
-  width: 100%;
-  align-items: center;
-  position: relative;
-  white-space: nowrap;
-  transition: all 0.2s;
-  transform: scale(0.98);
-  cursor: url('Wireframe/drag_cursor.svg') 48 48, pointer;
-}
-.gallery.active {
+.hovering {
+  visibility: visible;
   transform: scale(1);
 }
-.gallery::-webkit-scrollbar {
-  display: none;
+.expand {
+  transform: scale(1.3);
+  filter: invert(50%) sepia(30%) saturate(6000%) hue-rotate(-12deg) brightness(130%) contrast(200%);
 }
-.artwork {
-  height: 300px;
-  width: 300px;
-  margin: 0 25px;
-  position: relative;
-  filter: drop-shadow(0 0 30px rgb(244,152,66,0.1));
-  transition: all 0.5s;
-  object-fit: cover;
-  transform-origin: center center;
-}
-.artwork:hover {
-  transform: scale(0.95);
-}
-.pos1 {
-  top: -60px;
-}
-.pos2 {
-  top: 20px;
-}
-.pos3 {
-  top: 100px;
-}
-.pos4 {
-  top: -100px;
-}
-.pos5 {
-  top: -20px;
-}
-.pos6 {
-  top: 60px;
-}
-/* anchor point adjustments */
-#ceramicssect {
-  padding-top: 60px;
-}
-#inksect {
-  padding-top: 60px;
-  text-align: right;
-  margin-right: 100px;
-}
-#aboutsect {
-  padding-top: 60px;
-}
-
-#inkbox {
-  right: 0;
-}
-#inkGallery {
-  flex-direction: row-reverse;
-}
-/* footer */
-.footer{
-  margin: 300px 0 80px 0;
-  padding: 20px 100px;
-}
-.links{
-  margin-top: 100px;
-}
-.links a{
-  color: #151516;
-  text-decoration: underline !important;
-  font: 'Roboto', sans-serif;
-  font-weight: 200;
-  margin-right: 48px;
-  transition: all 0.5s;
-}
-.links a:hover {
-  color: #F49842;
-  letter-spacing: 1px;
-  transform-origin: center left;
-}
-/* reveal */
-.reveal{
-  position: relative;
-  filter: blur(1px);
+.full-image {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0,0.8);
+  backdrop-filter: blur(4px);
+  width: 100%;
+  height: 100%;
   opacity: 0;
-  transition: 2s all ease;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  transition: 0.5s;
 }
-.reveal.show{
-  /* transform: translateY(150px); */
-  filter: blur(0);
-  opacity: 1;
+.full-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  max-width: 50%;
 }
-/* nav is a bit janky after adding reveal animatiom */
+#full-image {
+  object-fit: contain;
+  position: relative;
+  max-height: 550px;
+}
+#image-title {
+  font-size: 1.3em;
+  margin-bottom: 0px;
+  opacity: 0.8;
+}
+#image-size {
+  font-size: 1em;
+  opacity: 0.7;
+  margin-bottom: 0px;
+}
+#exit {
+  opacity: 0.5;
+}
+.shown {
+  visibility: visible;
+  opacity: 100%;
+  display: flex;
+}
+.featuredElement {
+  position: relative;
+  margin: 0px 0 70px 0;
+  width: 100%;
+}
+.featuredElement svg {
+  width: 100%;
+}
