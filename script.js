@@ -225,10 +225,10 @@ for (let i = 0; i < gallery_list.length; i++) {
     cursor.classList.add("hovering");
     for (let j = 0; j < image.length; j++) {
       image[j].addEventListener('mouseenter', e => {
-        document.getElementById('cursor-swap').src="sunrenart/Wireframe/view_cursor.svg";
+        document.getElementById('cursor-swap').src="./Wireframe/view_cursor.svg";
       })
       image[j].addEventListener('mouseleave', e => {
-        document.getElementById('cursor-swap').src="sunrenart/Wireframe/drag_cursor.svg";
+        document.getElementById('cursor-swap').src="./Wireframe/drag_cursor.svg";
       })
     }
   })
