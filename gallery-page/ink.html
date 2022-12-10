@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ink work</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="gallery-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="loader">
+        <div class="square">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- full image overlay-->
+    <div class="full-image" id="imgBox">
+        <div class="full-box">
+            <img id="full-image" src=""/>
+            <p id="image-title"></p>
+            <p id="image-size"></p>
+            <p id="exit">Click anywhere to exit</p>
+        </div>
+    </div>
+    <div class="header">
+        <div class="goBack">
+            <a href = "/index.html#ceramicssect">
+                <svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="arrowback" d=
+                        "M70,0 h0 a70,70 0 0 1 70,70 v0 a70,70 0 0 1 -70,70 h0 a70,70 0 0 1 -70,-70 v0 a70,70 0 0 1 70,-70 z" fill="#EBEBEB"/>
+                    <line x1="1" y1="-1" x2="87" y2="-1" transform="matrix(-1 0 0 1 118 71)" stroke="#151516" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M46.6365 51.6567L29.5 70" stroke="#151516" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M29.4999 70L46.5863 87.0405" stroke="#151516" stroke-width="2" stroke-linecap="round"/>
+                </svg>  
+            </a>
+        </div>
+        <div class="tabs">
+            <a href="ceramic.html"><p class = "tab">Ceramics</p></a>
+            <a href="ink.html"><p class = "selected">Ink on rice paper</p></a>
+            <a href="oil.html"><p class = "tab">Oil paintings</p></a>
+        </div>
+        
+    </div>
+    
+    <div class="galleryPage" id="inkwork">  
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+    <script src="/butter.js-master/src/butter.js"></script>
+    <script type="module" src="/gallery-page/liquid2.js"></script>
+    <script src="gallery-script.js"></script>
+</body>
+</html>

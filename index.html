@@ -11,11 +11,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="intro" id="top">
-        <h1 class="title">Sun Ren</h1>
-        <p>Actor, playwrite, and ceramics pioneer in contemporary Chinese art.</p>
+    <!-- the mouse -->
+    <div class="cursor">
+        <img id="cursor-swap" src="/Wireframe/drag_cursor.svg"/>
     </div>
-    <!-- Sticky nav -->
+    <!-- full image overlay-->
+    <div class="full-image" id="imgBox">
+        <div class="full-box">
+            <img id="full-image" src=""/>
+            <p id="image-title"></p>
+            <p id="image-size"></p>
+            <p id="exit">Click anywhere to exit</p>
+        </div>
+    </div>
     <div class="navBar">
         <div class="navLeft">
             <div class="navLogo">
@@ -35,112 +43,149 @@
             </div>
         </div>
         <div class="navRight">
-            <div class="menu">Menu</div>
+            <div class="menu">Nav</div>
         </div>
         
     </div>
-    <!-- Featured container -->
-    <div class="featured">
-        <img class="featuredImage" src="Ceramics/3.Teapot IV ,Stoneware with glaze , 9X6X9 _ Cup 1.5X2s.jpg"/>
-        <div class="glowAndText">
-            <div class="glowContainer">
-                <img src="Wireframe/rectGlow.png">
-                <div class="glowGrain">
-                    <img src="Wireframe/grainGlow.png"/>
+    <div id="butter">
+        <div class="intro reveal" id="top">
+            <h1 class="title">Sun Ren</h1>
+            <p>Ceramics pioneer in contemporary Chinese art.</p>
+        </div>
+        <!-- Sticky nav -->
+        <!-- Featured container -->
+        <div class="featured reveal">
+            <div class="featuredElement">
+                <svg width="1239" height="678" viewBox="-100 -20 1239 708" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <mask id="clip" mask-position="center">
+                            <path id="box-path" d="M1 677V1H1238V677H1Z" fill="#F0F0F0">     
+                        </mask>
+                    </defs>
+                    <image id="mask-image" href="/Wireframe/3.Teapot IV ,Stoneware with glaze , 9X6X9 _ Cup 1.5X2s.jpg" height="100%" width="100%" mask="url(#clip)"></image>
+                </svg>
+            </div>
+            <div class="glowAndText">
+                <div class="glowContainer">
+                    <img src="Wireframe/rectGlow.png">
+                    <div class="glowGrain">
+                        <img src="Wireframe/grainGlow.png"/>
+                    </div>
                 </div>
             </div>
+            
         </div>
-        
-    </div>
-    <!-- About container -->
-    <section class="about reveal">
-        <div class="aboutInfo">
-            <img class="sectionTitle" id="aboutsect" src="Wireframe/About.png" width="250px"/>
-            <p class="aboutText">Sun Ren is an Associate Professor at the China Academy of Art and Vice President of China Contemporary Art Research Institute. He graduated from the Zhejiang Academy of Fine Arts in 1985, where he would later become a professor.</p> 
-            <p class="aboutText">An active participant of the Chinese avant-garde Art movement, ‘85 New Wave, Sun is well known for his pioneering approach to modern ceramic art, while also exploring modern inkbrush and conceptual painting.</p>
-            <div class="cta">
-                <a href="#ceramicssect"><h3>View works</h3></a>
-            </div>
-        </div>
-        <div class="aboutImage">
-            <img id="oil" src="Oil Paintings/014 (2).jpg"/>
-            <img id="oil2" src="Oil Paintings/038 (2)web.jpg"/>
-            <img id="ink" src="Ink on rice paper/12.jpg"/>
-            <img id="ceramic" src="Ceramics/8.Between and beyond 8X7X29-s.jpg"/>
-        </div>   
-    </section>
+        <!-- About container -->
+        <section class="about">
+            <div class="aboutInfo">
+                <div class="reveal">
+                    <img class="sectionTitle reveal" id="aboutsect" src="Wireframe/About.png" width="250px"/>
+                    <p class="aboutText">Sun Ren is an Associate Professor at the China Academy of Art and Vice President of China Contemporary Art Research Institute. He graduated from the Zhejiang Academy of Fine Arts in 1985, where he would later become a professor.</p> 
+                    <p class="aboutText">An active participant of the Chinese avant-garde Art movement, ‘85 New Wave, Sun is well known for his pioneering approach to modern ceramic art, while also exploring modern inkbrush and conceptual painting.</p> 
+                    <div id = "aboutImg-s" class="aboutImage-s reveal">
+                        <img id="oil-s"/>
+                        <img id="oil2-s"/>
+                        <img id="ink-s"/>
+                        <img id="ceramic-s"/>
+                    </div>  
 
-    <section class="works">
-        <!-- ceramics -->
-        <div class="container ceramics reveal">
-            <div class="galleryTitle">
-                <h1 id="ceramicssect">Ceramics</h1>
-                <div class="seeMore">
-                    <!-- image content in css -->
+                    <div class="cta">
+                        <a href="#ceramicssect"><h3>View works</h3></a>
+                    </div>
                 </div>
             </div>
-            <div class="highlightBox" id="ceramicbox"></div>
-                <!-- infinite scrolling https://www.youtube.com/watch?v=4UXJb4rjeDg for later -->
-                <div class="gallery" id="ceramicGallery">
-                    <img class="artwork pos1" name = "Teapot IV" src="Ceramics/3.Teapot IV ,Stoneware with glaze , 9X6X9 _ Cup 1.5X2s.jpg"/>
-                    <img class="artwork pos2" name = "8 and 9" src="Ceramics/8and9.png"/>
-                    <img class="artwork pos3" name = "1" src="Ceramics/1.png"/>
-                    <img class="artwork pos4" name = "2" src="Ceramics/2.png"/>
-                    <img class="artwork pos5" name = "3" src="Ceramics/11.Vehicle,Stoneware with Glaze, 6.5X7.5X19.5-s.jpg"/>
-                    <img class="artwork pos6" name = "5" src="Ceramics/5and6.png"/>
-                </div>
-        </div>
-        <!-- ink on rice paper -->
-        <div class="container inkonrice reveal">
-            <div class="galleryTitle">
-                <h1 id="inksect">Ink on Rice Paper</h1>
-                <div class="seeMore">
-                    <!-- image content in css -->
-                </div>
-            </div>
-            <div class="highlightBox" id="inkbox"></div>
-                <!-- infinite scrolling https://www.youtube.com/watch?v=4UXJb4rjeDg for later -->
-                <div class="gallery" id="inkGallery">
-                    <img class="artwork pos1" src="Ink on rice paper/03.JPG"/>
-                    <img class="artwork pos2" src="Ink on rice paper/04.JPG"/>
-                    <img class="artwork pos3" src="Ink on rice paper/05.JPG"/>
-                    <img class="artwork pos4" src="Ink on rice paper/06.JPG"/>
-                    <img class="artwork pos5" src="Ink on rice paper/07.JPG"/>
-                    <img class="artwork pos6" src="Ink on rice paper/08.JPG"/>
-                    <img class="artwork pos1" src="Ink on rice paper/09.JPG"/>
-                    <img class="artwork pos2" src="Ink on rice paper/10.JPG"/>
-                </div>
-        </div>
-        <!-- oil painting -->
-        <div class="container oilpainting reveal">
-            <div class="galleryTitle">
-                <h1 id="oilsect">Oil Paintings</h1>
-                <div class="seeMore">
-                    <!-- image content in css -->
-                </div>
-            </div>
-            <div class="highlightBox" id="oilbox"></div>
-                <!-- infinite scrolling https://www.youtube.com/watch?v=4UXJb4rjeDg for later -->
-                <div class="gallery" id="oilGallery">
-                    <img class="artwork pos1" src="Oil Paintings/032-web.jpg"/>
-                    <img class="artwork pos2" src="Oil Paintings/011 (2).jpg"/>
-                    <img class="artwork pos3" src="Oil Paintings/014 (2).jpg"/>
-                    <img class="artwork pos4" src="Oil Paintings/03.jpg"/>
-                    <img class="artwork pos5" src="Oil Paintings/013.jpg"/>
-                    <img class="artwork pos6" src="Oil Paintings/035web.jpg"/>
-                    <img class="artwork pos1" src="Oil Paintings/himalayapaintingstudy1-web.jpg"/>
-                </div>
-        </div>
-    </section>
-    <!-- footer -->
-    <div class="footer">
-        <img class="sectionTitle" id="contactsect" src="Wireframe/Contact.png" width="250px"/>
-        <div class="links">
-            <a href="#">Resume</a>
-            <a href="#">Email</a>  
-        </div>
+            <div id = "aboutImg" class="aboutImage reveal">
+                <img id="oil"/>
+                <img id="oil2"/>
+                <img id="ink"/>
+                <img id="ceramic"/>
+            </div>   
+        </section>
 
+        <section class="works">
+            <!-- ceramics -->
+            <div class="container ceramics reveal">
+                <div class="galleryTitle" id="ceramicssect">
+                    <h1>Ceramics</h1>
+                    <a href="gallery-page/ceramic.html">
+                    <div class="seeMore">
+                        <svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id="arrow" d=
+                                "M70,0 h0 a70,70 0 0 1 70,70 v0 a70,70 0 0 1 -70,70 h0 a70,70 0 0 1 -70,-70 v0 a70,70 0 0 1 70,-70 z" fill="#EBEBEB"/>
+                            <line x1="23" y1="70" x2="109" y2="70" stroke="#151516" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M93.3635 51.6567L110.5 70" stroke="#151516" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M110.5 70L93.4136 87.0405" stroke="#151516" stroke-width="2" stroke-linecap="round"/>
+                        </svg>  
+                    </div>
+                    </a>
+                </div>
+                <div class="images reveal">
+                    <div class="highlightBox" id="ceramicbox"></div>
+                    <div class="gallery" id="ceramicGallery"></div>
+                </div>
+            </div>
+            <!-- ink on rice paper -->
+            <div class="container inkonrice reveal">
+                <div class="galleryTitle" id="inksect">
+                    <h1>Ink on Rice Paper</h1>
+                    <a href="gallery-page/ink.html">
+                    <div class="seeMore">
+                        <div class="seeMore">
+                            <svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path id="arrow2" d=
+                                    "M70,0 h0 a70,70 0 0 1 70,70 v0 a70,70 0 0 1 -70,70 h0 a70,70 0 0 1 -70,-70 v0 a70,70 0 0 1 70,-70 z" fill="#EBEBEB"/>
+                                <line x1="23" y1="70" x2="109" y2="70" stroke="#151516" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M93.3635 51.6567L110.5 70" stroke="#151516" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M110.5 70L93.4136 87.0405" stroke="#151516" stroke-width="2" stroke-linecap="round"/>
+                            </svg>  
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="images reveal">
+                    <div class="highlightBox" id="inkbox"></div>
+                    <div class="gallery" id="inkGallery"></div>            
+                </div>
+            </div>
+            <!-- oil painting -->
+            <div class="container oilpainting reveal">
+                <div class="galleryTitle" id="oilsect">
+                    <h1>Oil Paintings</h1>
+                    <a href="gallery-page/oil.html">
+                    <div class="seeMore">
+                        <div class="seeMore">
+                        <svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id="arrow" d=
+                                "M70,0 h0 a70,70 0 0 1 70,70 v0 a70,70 0 0 1 -70,70 h0 a70,70 0 0 1 -70,-70 v0 a70,70 0 0 1 70,-70 z" fill="#EBEBEB"/>
+                            <line x1="23" y1="70" x2="109" y2="70" stroke="#151516" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M93.3635 51.6567L110.5 70" stroke="#151516" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M110.5 70L93.4136 87.0405" stroke="#151516" stroke-width="2" stroke-linecap="round"/>
+                        </svg>  
+                    </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="images reveal">
+                    <div class="highlightBox" id="oilbox"></div>
+                    <div class="gallery" id="oilGallery"></div>
+                </div>        
+            </div>
+        </section>
+        <!-- footer -->
+        <div class="footer">
+            <img class="sectionTitle" id="contactsect" src="Wireframe/Contact.png" width="250px"/>
+            <div class="links">
+                <a href="#">Resume</a>
+                <a href="#">Email</a>  
+            </div>
+
+        </div>
     </div>
+    <!-- <script src="SmoothScroll.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+    <script src="butter.js-master/src/butter.js"></script>
+    <script src="cube-gallery-master/dist/cube-gallery.js"></script>
+    <script type="module" src="liquid.js"></script>
     <script src="script.js"></script>
 </body>
 
