@@ -33,6 +33,18 @@
     backdrop-filter: blur(10px);
     border-radius: 15px;
   }
+  .featuredElement {
+    display: none;
+  }
+  .featuredImage {
+    height: 500px;
+    object-fit: cover;
+    margin: 70px 0 70px 0;
+  }
+  .featuredImage img {
+    height: 100%;
+    width: 100%;
+  }
   .intro p {
     font-weight: 200;
     width: 100%;
@@ -120,17 +132,6 @@
     transform: rotate(-45deg);
     border-radius: 50%;
   }
-  .featured {
-    margin: 0;
-    width: 100%;
-    position: relative;
-  }
-  .featuredImage {
-    width: 100%;
-    height: 570px;
-    object-fit: cover;
-    margin: 70px 0 70px 0;
-  }
   .glowAndText {
     position: absolute;
     bottom: 30px;
@@ -158,7 +159,7 @@
   /* about section */
   
   .about {
-    margin: 0px 100px 50px 100px;
+    margin: 0px 20px 50px 20px;
     height: 700px;
     text-align: center;
     /* for some reason 100% doesnt work it doesnt wrap */
@@ -166,8 +167,11 @@
   .sectionTitle {
     margin: auto 0;
     padding: 0;
-
   }
+  .articles {
+    justify-content: center;
+  }
+
   .aboutText {
     top: 20px;
     width: 100%;
@@ -222,17 +226,6 @@
     display: none;
     visibility: hidden;
   }
-  .aboutImage-s {
-    justify-content: center;
-    display: flex;
-    visibility: visible;
-    width: 100%;
-    height: 18vh;
-    overflow: hidden;
-  }
-  .aboutImage-s img {
-    opacity: 80%;
-  }
   .works {
     padding-top: 0px;
     position: relative;
@@ -242,20 +235,22 @@
     margin: 50px 0 180px 0px;
   }
   .galleryTitle {
-    margin-left: 100px;
+    margin-left: 10px;
     color: #F1EFED;
     mix-blend-mode: difference;
     display: flex;
-    gap: 30px;
+    gap: 20px;
     align-items: center;
   }
   .galleryTitle h1{
     font-family: 'Roboto', sans-serif;
     font-weight: 200;
-    font-size: 4rem;
+    font-size: 3rem;
     text-transform: uppercase;
+    line-height: 100%;
   }
   .highlightBox {
+    display: none;
     position: absolute;
     z-index:0;
     width: 500px;
@@ -265,14 +260,16 @@
   #ceramicbox {
     left: 0;
   }
-  .seeMore img{
-    width: 80px;
+  .seeMore svg{
     transition: 0.5s;
   }
-  .seeMore img:hover {
+  .seeMore svg:active {
     cursor: pointer;
     transform: scale(0.9);
     filter: invert(70%) sepia(20%) saturate(6000%) hue-rotate(-10deg) brightness(180%) contrast(90%);
+  }
+  .seeMore svg {
+    width: 100px;
   }
   .gallery {
     display: flex;
@@ -318,11 +315,13 @@
   .pos4 {
     top: 20px;
   }
-  
+  #ceramicssect {
+    padding-top: 100px;
+  }
   #inksect {
     padding-top: 60px;
     text-align: right;
-    margin-right: 100px;
+    margin-right: 10px;
     line-height: 100%;
   }
   #aboutsect {
@@ -337,11 +336,11 @@
   }
   /* footer */
   .footer{
-    margin: 800px 0 80px 0;
+    margin: 400px 0 80px 0;
     padding: 20px 100px;
   }
   .links{
-    margin-top: 100px;
+    margin-top: 50px;
   }
   .links a{
     color: #151516;
@@ -358,7 +357,6 @@
   }
   /* reveal */
   .reveal{
-    position: relative;
     opacity: 0;
     top: 100px;
     transition: 2s all ease;
@@ -397,6 +395,17 @@
     background-color: rgb(0,0,0,0.8);
     backdrop-filter: blur(10px);
     border-radius: 15px;
+  }
+  .featuredElement {
+    display: none;
+  }
+  .featuredImage {
+    width: 100%;
+    object-fit: cover;
+    margin: 70px 0 70px 0;
+  }
+  .featuredImage img {
+    width: 100%;
   }
   .intro p {
     font-weight: 200;
@@ -538,6 +547,13 @@
     width: 100%;
     line-height: 150%;
   }
+  #sect2 {
+    margin-left: 0;
+  }
+  .articles {
+    text-align: center;
+    justify-content: center;
+  }
   .cta {
     position: relative;
     margin: 20px 0 0 0px;
@@ -587,17 +603,7 @@
     display: none;
     visibility: hidden;
   }
-  .aboutImage-s {
-    justify-content: center;
-    display: flex;
-    visibility: visible;
-    width: 100%;
-    height: 18vh;
-    overflow: hidden;
-  }
-  .aboutImage-s img {
-    opacity: 80%;
-  }
+
   .works {
     padding-top: 0px;
     position: relative;
@@ -619,8 +625,10 @@
     font-weight: 200;
     font-size: 4rem;
     text-transform: uppercase;
+    line-height: 100%;
   }
   .highlightBox {
+    display: inline;
     position: absolute;
     z-index:0;
     width: 500px;
@@ -648,6 +656,14 @@
   }
   .gallery::-webkit-scrollbar {
     display: none;
+  }
+  .seeMore svg{
+    transition: 0.5s;
+  }
+  .seeMore svg:active {
+    cursor: pointer;
+    transform: scale(0.9);
+    filter: invert(70%) sepia(20%) saturate(6000%) hue-rotate(-10deg) brightness(180%) contrast(90%);
   }
   .artwork {
     height: 340px;
@@ -682,7 +698,7 @@
   #inksect {
     padding-top: 60px;
     text-align: right;
-    margin-right: 100px;
+    margin-right: 50px;
     line-height: 100%;
   }
   #aboutsect {
@@ -880,10 +896,63 @@
     position: relative;
   }
   .featuredImage {
+    display: none;
+  }
+  .full-image {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0,0.8);
+    backdrop-filter: blur(4px);
     width: 100%;
-    height: 570px;
-    object-fit: cover;
-    margin: 70px 0 70px 0;
+    height: 100%;
+    opacity: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    transition: 0.5s;
+  }
+  .full-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    max-width: 50%;
+  }
+  #full-image {
+    object-fit: contain;
+    position: relative;
+    max-height: 550px;
+  }
+  #image-title {
+    font-size: 1.3em;
+    margin-bottom: 0px;
+    opacity: 0.8;
+  }
+  #image-size {
+    font-size: 1em;
+    opacity: 0.7;
+    margin-bottom: 0px;
+  }
+  #exit {
+    opacity: 0.5;
+  }
+  .shown {
+    visibility: visible;
+    opacity: 100%;
+    display: flex;
+  }
+  .featuredElement {
+    display: inline-block;
+    position: relative;
+    margin: 0px 0 70px 0;
+    width: 100%;
+  }
+  .featuredElement svg {
+    width: 100%;
   }
   .glowAndText {
     position: absolute;
@@ -932,6 +1001,15 @@
     width: 100%;
     line-height: 150%;
   }
+  #sect2 {
+    margin-left: 50px;
+  }
+  .articles {
+    justify-content: flex-start;
+  }
+  .hoverbox p {
+    margin-left: 10px;
+  }
   .cta {
     position: relative;
     margin: 20px 0 0 50px;
@@ -974,8 +1052,6 @@
     transform: scaleX(1);
     transform-origin: bottom left;
   }
-  /* paintings on about */
-  /* i would like the images to start scaling down after a certain window width */
   .aboutImage {
     margin-top: 100px;
     float: right;
@@ -987,12 +1063,6 @@
   }
   .aboutImage img {
     position: absolute;
-  }
-  .aboutImage-s {
-    justify-content: center;
-    display: none;
-    visibility: hidden;
-    height: 18vh;
   }
   .aboutImage #oil {
     width: 200px;
@@ -1055,9 +1125,6 @@
   }
   #ceramicbox {
     left: 0;
-  }
-  .seeMore img{
-    width: 100px;
   }
   .gallery {
     display: flex;
@@ -1294,15 +1361,61 @@
     transform: rotate(-45deg);
     border-radius: 50%;
   }
-  .featured {
-    margin: 20px 0 70px 35%;
-    width: 65%;
-    position: relative;
+  .full-image {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0,0.8);
+    backdrop-filter: blur(4px);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    transition: 0.5s;
   }
-  .featuredImage {
-    margin: 0;
-    padding: 0;
-    height: 620px;
+  .full-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    max-width: 50%;
+  }
+  #full-image {
+    object-fit: contain;
+    position: relative;
+    max-height: 550px;
+  }
+  #image-title {
+    font-size: 1.3em;
+    margin-bottom: 0px;
+    opacity: 0.8;
+  }
+  #image-size {
+    font-size: 1em;
+    opacity: 0.7;
+    margin-bottom: 0px;
+  }
+  #exit {
+    opacity: 0.5;
+  }
+  .shown {
+    visibility: visible;
+    opacity: 100%;
+    display: flex;
+  }
+  .featuredElement {
+    display: inline-block;
+    position: relative;
+    margin: 0px 0 70px 0;
+    width: 100%;
+  }
+  .featuredElement svg {
+    width: 100%;
   }
   .glowAndText {
     position: absolute;
@@ -1347,6 +1460,12 @@
     top: 20px;
     width: 100%;
     line-height: 150%;
+  }
+  .subtext {
+    margin-top: 30px;
+  }
+  .articles {
+    justify-content: flex-start;
   }
   .cta {
     position: relative;
@@ -1409,7 +1528,7 @@
   .aboutImage #oil2 {
     width: 300px;
     bottom: -50px;
-    left: -100px;
+    left: -10px;
     filter: blur(1.5px);
     z-index: -2;
     opacity: 0.7;
@@ -1633,4 +1752,56 @@
 }
 .featuredElement svg {
   width: 100%;
+}
+.subtext {
+  font: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 1.3em;
+}
+.articles {
+  display: flex;
+  gap: 2em;
+}
+.article {
+  width: 140px;
+}
+.articleimage {
+  position: relative;
+  overflow:hidden;
+}
+.hoverbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F49842;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #F1EFED;
+  font-size: 2.5em;
+  line-height: 100%;
+  text-transform: uppercase;
+  visibility: hidden;
+  transition: 0.8s;
+}
+.articleimage:hover .hoverbox {
+  visibility: visible;
+  top: 0;
+}
+.article img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  margin-bottom: 0;
+}
+.articletitle {
+  text-align: center;
+  text-decoration: underline;
+  margin-top: 5px;
+  font-size: 0.9em;
+  color: #151516;
+  opacity: 0.7;
 }

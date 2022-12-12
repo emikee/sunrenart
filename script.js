@@ -92,11 +92,7 @@ client.getEntries().then(function (entries) {
   document.getElementById('oil2').src = entries.includes.Asset[2].fields.file.url;
   document.getElementById('ink').src = entries.includes.Asset[37].fields.file.url;
   document.getElementById('ceramic').src = entries.includes.Asset[15].fields.file.url;
-  document.getElementById('oil-s').src = entries.includes.Asset[3].fields.file.url;
-  document.getElementById('oil2-s').src = entries.includes.Asset[2].fields.file.url;
-  document.getElementById('ink-s').src = entries.includes.Asset[37].fields.file.url;
-  document.getElementById('ceramic-s').src = entries.includes.Asset[15].fields.file.url;
-
+  
   entries.items.forEach(function (entry) {
     let ceramicGallery = document.getElementById('ceramicGallery');
     let inkGallery = document.getElementById('inkGallery');
@@ -113,6 +109,7 @@ client.getEntries().then(function (entries) {
       ceramicGallery.append(artwork);
       ceramicCount++;
       cCount++;
+      console.log("hi");
       if (ceramicCount == 5){
         ceramicCount = 1;
       }
@@ -172,19 +169,59 @@ overlay.addEventListener("click", e => {
 //changing bg on scroll
 var body = document.getElementsByTagName('body')[0];
 body.style.backgroundColor = '#F1EFED';
+//media queries
+var mobile = window.matchMedia("(min-width: 320px) and (max-width: 599px)");
+var tablet = window.matchMedia("(min-width: 600px) and (max-width: 1024px)");
+var computer = window.matchMedia("(min-width: 1025px) and (max-width: 1280px)");
 
 // trigger this function every time the user scrolls
 window.onscroll = function (event) {
     var scroll = window.pageYOffset;
-    if (scroll < 1400) {
+    console.log(scroll);
+    if (mobile.matches) {
+      if (scroll < 1250) {
         // white
         body.style.backgroundColor = '#F1EFED';
-    } else if (scroll >= 1360 && scroll <= 4000) {
-        //black
-        body.style.backgroundColor = '#151516';
+      } else if (scroll >= 1250 && scroll <= 3800) {
+          //black
+          body.style.backgroundColor = '#151516';
+      } else {
+          // white
+          body.style.backgroundColor = '#F1EFED';
+      }
+    } else if (tablet.matches) {
+      if (scroll < 1220) {
+          // white
+          body.style.backgroundColor = '#F1EFED';
+      } else if (scroll >= 1220 && scroll <= 3800) {
+          //black
+          body.style.backgroundColor = '#151516';
+      } else {
+          // white
+          body.style.backgroundColor = '#F1EFED';
+      }
+    } else if (computer.matches) {
+      if (scroll < 1360) {
+        // white
+        body.style.backgroundColor = '#F1EFED';
+      } else if (scroll >= 1360 && scroll <= 4000) {
+          //black
+          body.style.backgroundColor = '#151516';
+      } else {
+          // white
+          body.style.backgroundColor = '#F1EFED';
+      }
     } else {
-        // white
-        body.style.backgroundColor = '#F1EFED';
+      if (scroll < 1360) {
+          // white
+          body.style.backgroundColor = '#F1EFED';
+      } else if (scroll >= 1360 && scroll <= 4000) {
+          //black
+          body.style.backgroundColor = '#151516';
+      } else {
+          // white
+          body.style.backgroundColor = '#F1EFED';
+      }
     }
 }
 

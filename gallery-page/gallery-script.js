@@ -83,7 +83,7 @@ window.addEventListener('load', function () {
     let loader = document.getElementsByClassName("loader");
     setTimeout(function() {
         loader[0].classList.add("loaded");
-    })
+    }, 200)
 } )
 
 const overlay = document.getElementById("imgBox");
